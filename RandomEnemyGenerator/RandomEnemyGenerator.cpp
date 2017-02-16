@@ -13,15 +13,17 @@ struct Enemy
 	int health;
 };
 
-Enemy operator == (Enemy type1, Enemy type2) {
-
-	bool SAME = false;
+bool operator == (Enemy type1, Enemy type2) {
 
 	if ((type1.type == type2.type) && (type1.name == type2.name)) {
-		
-		SAME = true;
+
+		return true;
 	}
-	return SAME;
+	else
+	{
+		return false;
+	}
+	
 }
 
 
