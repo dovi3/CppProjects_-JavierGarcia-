@@ -72,4 +72,12 @@ void main() {
 		};
 		++i;
 	}
+
+	// imprimir el array de enemigos
+	std::cout <<"list of enemies:\n";
+
+	for (auto &enemy : enemies){
+
+		std::cout << enemy.name << " is a " << enemy.getEnemyTypeString() << " whose life is " << enemy.health << std::endl;
+	}
 }
