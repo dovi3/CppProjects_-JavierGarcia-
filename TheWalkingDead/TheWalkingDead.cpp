@@ -1,0 +1,142 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+enum class Weapon {FISTS, GUN, SHOTGUN, REVOLVER, SNIPER, MACHINE_GUN, MAX};
+
+class Zombie;
+
+class Player
+{
+public:
+	
+	
+
+	Player();
+
+	void attack(Zombie &);
+	bool isAlive();
+	int life;
+	Weapon weapon;
+	float precision;
+
+	~Player();
+
+private:	
+};
+
+class Zombie
+{
+public:
+	Zombie();
+	~Zombie();
+	int distanceToPlayer;
+	float speed;
+	float damage;
+	int life;
+
+	void attack(Player &);
+	bool isAlive();
+
+private:
+};
+
+Player::Player() : weapon(static_cast <Weapon>(rand () % static_cast <int> (Weapon::MAX))), 
+precision((rand() % 11) / 10.0), life(100)
+{
+}
+void Player::attack(Zombie &Z)
+{
+
+	if (Z.distanceToPlayer <= 0) {
+		
+		Z.life = Z.life - (static_cast <int>(weapon) * precision);
+
+	}
+}
+
+bool Player::isAlive() 
+{
+	if (life <= 0) {
+
+		return false;
+	}
+	else {
+
+		return true;
+	}
+}
+Player::~Player()
+{
+}
+
+
+Zombie::Zombie() : distanceToPlayer((rand() % 180) + 20), speed((rand() % 199) / 10.0), 
+damage((rand() % 199) / 10.0), life(100)
+{
+}
+
+void Zombie::attack(Player &P)
+{
+	if (distanceToPlayer <= 0) {
+
+		P.life = P.life - damage;
+	}
+	else {
+
+		distanceToPlayer--;
+	}
+}
+
+bool Zombie::isAlive()
+{
+	if (life <= 0) {
+
+		return false;
+	}
+	else {
+
+		return true;
+	}
+}
+
+Zombie::~Zombie()
+{
+}
+
+int main()
+{
+	srand(time(nullptr));
+
+	Player p1;
+
+	const int num_zombies = 10;
+	Zombie zombies[num_zombies];
+
+	std::cout << "Playe \n" << "life: " << p1.life << "weapon: " << static_cast <int> (p1.weapon) << "precision: " << p1.precision;
+
+	bool zombiesAreAlive;
+
+	do
+	{
+		zombiesAreAlive = false;
+
+		for (int i = 0; i < num_zombies; i++) {
+
+			if (zombies[i].isAlive) {
+
+				p1.attack(zombies[i]);
+				zombies[i].attack(p1);
+				zombiesAreAlive = true;
+			}
+
+
+		}
+
+	} while (Player::isAlive || Zombie::isAlive);
+
+
+}
+
+
+
