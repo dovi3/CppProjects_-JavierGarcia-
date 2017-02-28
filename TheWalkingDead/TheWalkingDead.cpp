@@ -10,9 +10,9 @@ std::ostream& operator << (std::ostream &os, const Weapon &weapon) // OPTATIVO P
 	{
 	case Weapon::GUN:				return os << "gun";
 	case Weapon::SHOTGUN:			return os << "shotgun";
-	case Weapon::REVOLVER:
-	case Weapon::SNIPER:
-	case Weapon::MACHINE_GUN:
+	case Weapon::REVOLVER:			return os << "revolver";
+	case Weapon::SNIPER:			return os << "sniper";
+	case Weapon::MACHINE_GUN:		return os << "machine_gun";
 	default:
 
 	}
