@@ -4,7 +4,24 @@
 
 enum class Weapon {FISTS, GUN, SHOTGUN, REVOLVER, SNIPER, MACHINE_GUN, MAX};
 
-class Zombie;
+std::ostream& operator << (std::ostream &os, const Weapon &weapon) // OPTATIVO PARA MAS NOTA
+{
+	switch (weapon)
+	{
+	case Weapon::GUN:				return os << "gun";
+	case Weapon::SHOTGUN:			return os << "shotgun";
+	case Weapon::REVOLVER:
+	case Weapon::SNIPER:
+	case Weapon::MACHINE_GUN:
+	default:
+
+	}
+
+
+}
+
+
+class Zombie; //PROTOTIPO (FORWARD DECLARATION)
 
 class Player
 {
@@ -20,6 +37,7 @@ public:
 	Weapon weapon;
 	float precision;
 
+	//LOS DESTRUCTORES NO SON NECESARIOS HACERLOS EXCEPTUANDO CUANDO GENERAMOS MEMORIA DINÁMICA
 	~Player();
 
 private:	
@@ -42,7 +60,7 @@ private:
 };
 
 Player::Player() : weapon(static_cast <Weapon>(rand () % static_cast <int> (Weapon::MAX))), 
-precision((rand() % 11) / 10.0), life(100)
+precision((rand() % 11) / 10.f), life(100)
 {
 }
 void Player::attack(Zombie &Z)
@@ -71,8 +89,8 @@ Player::~Player()
 }
 
 
-Zombie::Zombie() : distanceToPlayer((rand() % 180) + 20), speed((rand() % 199) / 10.0), 
-damage((rand() % 199) / 10.0), life(100)
+Zombie::Zombie() : distanceToPlayer((rand() % 180) + 20), speed((rand() % 199) / 10.f), 
+damage((rand() % 199) / 10.f), life(100)
 {
 }
 
@@ -113,7 +131,7 @@ int main()
 	const int num_zombies = 10;
 	Zombie zombies[num_zombies];
 
-	std::cout << "Playe \n" << "life: " << p1.life << "weapon: " << static_cast <int> (p1.weapon) << "precision: " << p1.precision;
+	std::cout << "Player \n" << "life: " << p1.life << "weapon: " << static_cast <int> (p1.weapon) << "precision: " << p1.precision;
 
 	bool zombiesAreAlive;
 
@@ -130,7 +148,7 @@ int main()
 				zombiesAreAlive = true;
 			}
 
-
+			std::cout << zombies[i] << 
 		}
 
 	} while (Player::isAlive || Zombie::isAlive);
