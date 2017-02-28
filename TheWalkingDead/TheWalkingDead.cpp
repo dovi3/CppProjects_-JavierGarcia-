@@ -67,10 +67,10 @@ void Player::attack(Zombie &Z)
 {
 
 	if (Z.distanceToPlayer <= 0) {
-		
-		Z.life = Z.life - (static_cast <int>(weapon) * precision);
 
+		Z.life = Z.life - (static_cast <int>(weapon) * precision);
 	}
+	
 }
 
 bool Player::isAlive() 
@@ -98,7 +98,7 @@ void Zombie::attack(Player &P)
 {
 	if (distanceToPlayer <= 0) {
 
-		P.life = P.life - damage;
+		P.life = P.life - static_cast <int>(damage);
 	}
 	else {
 
