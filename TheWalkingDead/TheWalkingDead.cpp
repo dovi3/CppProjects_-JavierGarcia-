@@ -124,35 +124,44 @@ Zombie::~Zombie()
 
 int main()
 {
-	srand(time(nullptr));
+	srand(static_cast <unsigned> (time(nullptr)));
 
 	Player p1;
 
-	const int num_zombies = 10;
+	const int num_zombies{10};
 	Zombie zombies[num_zombies];
 
-	std::cout << "Player \n" << "life: " << p1.life << "weapon: " << static_cast <int> (p1.weapon) << "precision: " << p1.precision;
+	std::cout << "Player \n" << "life: " << p1.life << "weapon: " << p1.weapon << "precision: " << p1.precision << std::endl;
+	std::cout << "ZOMBIES ARE COMING!" << std::endl;
 
 	bool zombiesAreAlive;
 
 	do
 	{
 		zombiesAreAlive = false;
+		std::cout << "player\n\life: " << p1.life << std::endl;
 
-		for (int i = 0; i < num_zombies; i++) {
+		for (int i{ 0 }; i < num_zombies; i++) {
+			std::cout << "zombie[" << i << "]\n\life: " << zombies[i].life << ", distance: " << zombies[i].distanceToPlayer << ", speed: " << zombies[i].speed << ", damage: " << zombies[i].damage << std::endl;
 
-			if (zombies[i].isAlive) {
+			if (zombies[i].isAlive()) {
 
 				p1.attack(zombies[i]);
 				zombies[i].attack(p1);
 				zombiesAreAlive = true;
 			}
 
-			std::cout << zombies[i] << 
+			std::cout << "---------------------------------" << std::endl;
 		}
 
-	} while (Player::isAlive || Zombie::isAlive);
+	} while (p1.isAlive() && zombiesAreAlive);
 
+	if (zombiesAreAlive)
+		std::cout << "GAME OVER: Zombies ate the player" << std::endl;
+
+	else
+		std::cout << "PLAYER WIN: Player killed all zombies" << std::endl;
+	
 
 }
 
