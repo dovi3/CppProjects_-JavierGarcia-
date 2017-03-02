@@ -14,11 +14,8 @@ std::ostream& operator << (std::ostream &os, const Weapon &weapon) // OPTATIVO P
 	case Weapon::SNIPER:			return os << "sniper";
 	case Weapon::MACHINE_GUN:		return os << "machine_gun";
 	default:
-
 	}
-
-
-}
+};
 
 
 class Zombie; //PROTOTIPO (FORWARD DECLARATION)
