@@ -91,6 +91,7 @@ typedef std::map <std::string, Persona> DicPerson;
 std::map <std::string, Persona> persons;
 
 //inserto elementos del map 
+//ESTO SIEMPRE DENTRO DEL MAIN
 persons["46136653J"] = { "Jordi", 21 };
 
 //insertar a través de pair
