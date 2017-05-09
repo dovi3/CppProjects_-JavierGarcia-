@@ -15,7 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="unordered_map.cc">
+    <ClInclude Include="myStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="myStack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
