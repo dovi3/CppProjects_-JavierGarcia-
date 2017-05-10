@@ -10,8 +10,8 @@ public:
 	};
 
 	node *first;
-	void pop();
-	void push(int num);
+	void pop(node *& pila, int &num);
+	void push(node *&pila, int num);
 	int front();
 	bool isEmpty();
 	int size();

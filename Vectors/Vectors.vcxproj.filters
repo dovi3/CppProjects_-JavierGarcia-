@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="myStack.cpp">
+    <ClCompile Include="alternativeStack.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
