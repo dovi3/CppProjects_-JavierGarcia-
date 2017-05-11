@@ -8,37 +8,30 @@ myStack::myStack()
 
 }
 
-void myStack::push(node *&pila, int num)
+void myStack::push(int num)
 {
-	//creas un nuevo espacio de memoria para el siguiente nodo
-	node *newNodo = new node();
-	//guardas el valor del nuevo nodo en num
-	newNodo->element = num;
-	//el puntero del nuevo nodo haces que apunte al siguiente
-	newNodo->next = pila;
-	pila = newNodo;
+	first = nullptr;
+	first = new node({num, first });
 
 }
 
-void myStack::pop(node *& pila, int &num)
+void myStack::pop()
 {
-	node *aux = pila;
-	num = aux->element;
-	//si queremos eliminar este nodo, pila ha de apuntar al siguiente nodo
-	pila = aux->next;
-	delete aux;
+	node *after = first->next;
+	delete first;
+	first = after;
 }
 
 
 int myStack::front() 
 {
-
+	return first->element;
 }
 
 
 bool myStack::isEmpty()
 {
-
+	return first->next == nullptr;
 }
 
 
@@ -66,7 +59,3 @@ myStack::~myStack()
 }
 
 
-void main() 
-{
-
-}

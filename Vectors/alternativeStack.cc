@@ -43,12 +43,12 @@ int main()
 		std::cout << "introduce un numero" << std::endl;
 		std::cin >> n;
 		addStack(pila, n);
-		std::cout << "Quieres añadir otro elemento a pila? (s/n): ";
+		std::cout << "Quieres añadir otro elemento a la pila? (s/n): ";
 		std::cin >> rpt;
 
 	} while (rpt == 'S' || rpt == 's');
 
-	std::cout << "sacando todos los elementos de pila" << std::endl;
+	std::cout << "sacando todos los elementos de la pila" << std::endl;
 	//mientras no sea el final de la pila
 	while (pila != nullptr)
 	{

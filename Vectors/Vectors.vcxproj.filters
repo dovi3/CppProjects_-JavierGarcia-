@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="alternativeStack.cc">
+    <ClCompile Include="listsExercice.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
