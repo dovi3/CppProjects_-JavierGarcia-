@@ -6,21 +6,22 @@ public:
 	struct node
 	{
 		node *next;
-		node *previous;
 		int value;
+		node *previous;
+		
 	};
 
 
 	node *first;
 	node *last;
 	
-	void FirstElement();
-	void pushFront();
-	void pushBack();
+	
+	void pushFront(int n);
+	void pushBack(int n);
 	void popFront();
 	void popBack();
 	void size();
-	bool isEmpty();
+	//bool isEmpty();
 	
 	myList(myList &copia);
 

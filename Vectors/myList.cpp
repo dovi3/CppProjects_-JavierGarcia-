@@ -5,33 +5,33 @@
 
 myList::myList()
 {
+	first = nullptr;
+	last = nullptr;
+
+
+}
+
+void myList::pushFront(int n)
+{
+	//caso 1: cuando la lista esta vacia
+	if(first == nullptr){
+
+	first = new node({nullptr, n, nullptr});
+	last = first;
+	}
+	//caso 2: cuando ya existe algun nodo en la lista
+	else
+	{
+		node *aux = first->next;
+		node *aux2 = last->previous;
+		first = new node({nullptr, n, last});
+	}
+}
+
+void myList::pushBack(int n)
+{
+	//caso 1: cuando la lista esta vacia
 	
-
-
-}
-
-void myList::pushFront()
-{
-	//caso 1: cuando la lista esta vacia
-	last = nullptr;
-	first = new node({ first, last });
-	//caso 2: cuando ya hay un elemento en la lista
-	last = nullptr;
-	first = new node({ first, last });
-	node *aux = last->previous;
-	aux = first->next;
-}
-
-void myList::pushBack()
-{
-	//caso 1: cuando la lista esta vacia
-	last = nullptr;
-	first = new node({ first, last });
-	//caso 2: cuando ya hay un elemento en la lista
-	last = nullptr;
-	first = new node({ first, last });
-	node *aux = last->previous;
-	first = aux->next;
 }
 
 void myList::popFront()
@@ -56,10 +56,10 @@ void myList::size()
 {
 	
 }
-bool myList::isEmpty()
+/*bool myList::isEmpty()
 {
-	return first -> last == nullptr;
-}
+	
+}*/
 
 myList::myList(myList &copia)
 {
@@ -68,6 +68,6 @@ myList::myList(myList &copia)
 
 myList::~myList()
 {
-
-
+	delete first;
+	delete last;
 }

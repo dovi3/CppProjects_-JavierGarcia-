@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="myForward_list.h" />
     <ClInclude Include="myList.h" />
     <ClInclude Include="myStack.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="listsExercice.cc" />
+    <ClCompile Include="mainList.cpp" />
+    <ClCompile Include="myForward_list.cpp" />
     <ClCompile Include="myList.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

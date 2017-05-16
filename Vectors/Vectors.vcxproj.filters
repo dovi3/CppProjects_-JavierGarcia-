@@ -21,12 +21,18 @@
     <ClInclude Include="myList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="myForward_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="listsExercice.cc">
+    <ClCompile Include="myList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="myList.cpp">
+    <ClCompile Include="mainList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="myForward_list.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
