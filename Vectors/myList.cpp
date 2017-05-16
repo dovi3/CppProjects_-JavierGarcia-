@@ -41,9 +41,7 @@ void myList::popFront()
 	delete first;
 	first = aux;
 	//caso 2: cuando en la lista hay 2 elementos
-	node *aux = first->last;
-	delete first;
-	first = aux;
+	
 
 
 }
