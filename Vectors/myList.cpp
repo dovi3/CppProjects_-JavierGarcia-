@@ -18,8 +18,8 @@ void myList::pushFront()
 	//caso 2: cuando ya hay un elemento en la lista
 	last = nullptr;
 	first = new node({ first, last });
-	node *aux = last->first;
-	aux = first->last;
+	node *aux = last->previous;
+	aux = first->next;
 }
 
 void myList::pushBack()
@@ -30,14 +30,14 @@ void myList::pushBack()
 	//caso 2: cuando ya hay un elemento en la lista
 	last = nullptr;
 	first = new node({ first, last });
-	node *aux = last->first;
-	first = aux->last;
+	node *aux = last->previous;
+	first = aux->next;
 }
 
 void myList::popFront()
 {
 	//caso 1: cuando en la lista solo hay un elemento
-	node *aux = first->last;
+	node *aux = first->next;
 	delete first;
 	first = aux;
 	//caso 2: cuando en la lista hay 2 elementos
@@ -48,7 +48,7 @@ void myList::popFront()
 void myList::popBack()
 {
 	//caso 1: cuando en la lista solo hay un elemento
-	node *aux = first->last;
+	node *aux = first->next;
 	delete first;
 	first = aux;
 }

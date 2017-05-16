@@ -5,8 +5,8 @@ public:
 
 	struct node
 	{
-		node *first;
-		node *last;
+		node *next;
+		node *previous;
 		int value;
 	};
 
