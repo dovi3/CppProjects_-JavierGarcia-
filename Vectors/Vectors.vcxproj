@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="myList.h" />
     <ClInclude Include="myStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="listsExercice.cc" />
+    <ClCompile Include="myList.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7A7B4D5E-8CF5-456B-8394-0591059E16A0}</ProjectGuid>
