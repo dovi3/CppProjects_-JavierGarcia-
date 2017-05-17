@@ -20,8 +20,10 @@ public:
 	void pushBack(int n);
 	void popFront();
 	void popBack();
-	void size();
-	//bool isEmpty();
+	int size();
+	int front();
+	int back();
+	bool isEmpty();
 	
 	myList(myList &copia);
 

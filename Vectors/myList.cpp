@@ -14,56 +14,92 @@ myList::myList()
 void myList::pushFront(int n)
 {
 	//caso 1: cuando la lista esta vacia
+	node *aux = new node({ first, n, nullptr });
+	
 	if(first == nullptr){
-
-	first = new node({nullptr, n, nullptr});
-	last = first;
+		last = aux;
 	}
 	//caso 2: cuando ya existe algun nodo en la lista
 	else
 	{
-		node *aux = first->next;
-		node *aux2 = last->previous;
-		first = new node({nullptr, n, last});
+		first->previous = aux;
 	}
+	first = aux;
 }
 
 void myList::pushBack(int n)
 {
 	//caso 1: cuando la lista esta vacia
-	
+	node *aux = new node({nullptr, n, last});
+	if (first == nullptr) {
+		
+		first = aux;
+	}
+	else
+	{
+		last->next = aux;
+	}
+	last = aux;
 }
 
 void myList::popFront()
 {
-	//caso 1: cuando en la lista solo hay un elemento
-	node *aux = first->next;
-	delete first;
-	first = aux;
-	//caso 2: cuando en la lista hay 2 elementos
+	if (first != nullptr) {
+		node *aux = first->next;
+		delete first;
+		first = aux;
+	}
 	
-
-
 }
 void myList::popBack()
 {
-	//caso 1: cuando en la lista solo hay un elemento
-	node *aux = first->next;
-	delete first;
-	first = aux;
+	if (first != nullptr) {
+		node *aux = last->previous;
+		delete last;
+		last = aux;
+	}
 }
-void myList::size()
+int myList::size()
 {
+	int size = 0;
+	node *aux = first;
+
+	while (aux != nullptr)
+	{
+		aux = aux->next;
+		size++;
+	}
+
+	return size;
 	
 }
-/*bool myList::isEmpty()
+int myList::front()
 {
+	return first->value;
+}
+int myList::back()
+{
+	return last->value;
+}
+bool myList::isEmpty()
+{
+	if (first == nullptr)
+	{
+		return true;
+	}
+
+	return false;
 	
-}*/
+}
 
 myList::myList(myList &copia)
 {
-
+	myList copy = copia;
+	while (first != nullptr)
+	{
+		pushFront(copy.back());
+		copy.popBack();
+	}
 }
 
 myList::~myList()

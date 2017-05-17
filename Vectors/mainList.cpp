@@ -1,12 +1,12 @@
 #include <iostream>
 #include "myForward_list.h"
-
+#include "myList.h"
 
 
 void main()
 {
 	
-	myForward_list a;
+	/*myForward_list a;
 	a.push_front(5);
 	a.push_front(15);
 	a.push_front(45);
@@ -16,8 +16,16 @@ void main()
 	a.pop_front();
 	a.erase_after(2);
 
+	int size = a.size();*/
 
-
-	int size = a.size();
-	
+	myList b;
+	/*b.pushFront(5);
+	b.pushFront(10);*/
+	b.pushFront(5);
+	b.pushFront(10);
+	b.pushFront(20);
+	b.popFront();
+	int front = b.front();
+	int back = b.back();
+	int size = b.size();
 }
