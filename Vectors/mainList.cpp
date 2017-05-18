@@ -24,8 +24,8 @@ void main()
 	b.pushFront(5);
 	b.pushFront(10);
 	b.pushFront(20);
-	b.popFront();
-	int front = b.front();
-	int back = b.back();
-	int size = b.size();
+	//b.popFront();
+	//b.shiftLeft();
+	//b.shiftRight();
+	b.rotateRight();
 }

@@ -102,6 +102,71 @@ myList::myList(myList &copia)
 	}
 }
 
+void myList::shiftLeft()
+{
+
+		popFront();
+		pushBack(rand());
+	
+}
+void myList::shiftRight()
+{
+	
+		popBack();
+		pushFront(rand());
+	
+}
+void myList::rotateLeft()
+{
+
+	if (size() == 1)
+	{
+		std::cout << "solo hay un elemento";
+		
+	}
+	else
+	{
+		node *aux = first;
+		node *aux1 = first->next;
+		node *aux2 = last;
+		aux = last;
+		aux = aux1;
+		aux1 = aux2;
+		
+		
+	}
+
+}
+void myList::rotateRight()
+{
+	if (size() == 1)
+	{
+		std::cout << "solo hay un elemento";
+	}
+	else
+	{
+		node *aux = last;
+		node *aux1 = last->previous;
+		node *aux2 = first;
+		aux = first;
+		aux1 = aux;
+		aux2 = aux1;
+	}
+}
+void myList::reverse()
+{
+
+
+
+}
+void myList::reverse(int value) 
+{
+
+
+
+
+}
+
 myList::~myList()
 {
 	delete first;

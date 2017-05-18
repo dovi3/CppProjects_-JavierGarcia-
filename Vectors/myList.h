@@ -24,6 +24,13 @@ public:
 	int front();
 	int back();
 	bool isEmpty();
+	void shiftLeft();
+	void shiftRight();
+	void rotateLeft();
+	void rotateRight();
+	void reverse();
+	void reverse(int value);
+
 	
 	myList(myList &copia);
 
